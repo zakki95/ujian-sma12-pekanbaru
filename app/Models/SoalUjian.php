@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class SoalUjian extends Model
 {
+    protected $table = 'soal_ujian';
     use HasFactory;
 
     protected $fillable = ['sesi_ujian_id', 'bank_soal_id', 'urutan'];

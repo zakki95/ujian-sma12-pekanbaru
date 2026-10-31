@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BerkasSoal extends Model
 {
+    protected $table = 'berkas_soal';
     use HasFactory;
 
     protected $fillable = [];

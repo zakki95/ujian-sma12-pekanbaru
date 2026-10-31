@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BankSoal extends Model
 {
+    protected $table = 'bank_soal';
     use HasFactory, SoftDeletes;
 
     protected $fillable = [

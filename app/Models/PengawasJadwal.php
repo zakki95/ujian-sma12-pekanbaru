@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PengawasJadwal extends Model
 {
+    protected $table = 'pengawas_jadwal';
     use HasFactory;
 
     protected $fillable = [];

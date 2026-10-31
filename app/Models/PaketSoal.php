@@ -12,6 +12,8 @@ class PaketSoal extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'paket_soal';
+
     protected $fillable = [
         'guru_id', 'mata_pelajaran_id', 'nama_paket',
         'deskripsi', 'durasi_menit', 'status'
@@ -30,5 +32,10 @@ class PaketSoal extends Model
     public function jadwalUjian(): HasMany
     {
         return $this->hasMany(JadwalUjian::class);
+    }
+
+    public function anggotaPaketSoal(): HasMany
+    {
+        return $this->hasMany(AnggotaPaketSoal::class);
     }
 }

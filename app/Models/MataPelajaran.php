@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class MataPelajaran extends Model
 {
+    protected $table = 'mata_pelajaran';
     use HasFactory;
 
     protected $fillable = ['nama_mapel', 'kode_mapel'];

@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class PesertaUjian extends Model
 {
+    protected $table = 'peserta_ujian';
     use HasFactory;
 
     protected $fillable = ['jadwal_ujian_id', 'pengguna_id', 'status'];

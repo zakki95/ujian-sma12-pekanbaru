@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class AnggotaKelas extends Model
 {
+    protected $table = 'anggota_kelas';
     use HasFactory;
 
     protected $fillable = ['kelas_id', 'pengguna_id', 'status'];

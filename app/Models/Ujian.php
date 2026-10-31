@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Ujian extends Model
 {
+    protected $table = 'ujian';
     use HasFactory;
 
     protected $fillable = [

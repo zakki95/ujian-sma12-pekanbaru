@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class NotifikasiPengawas extends Model
 {
+    protected $table = 'notifikasi_pengawas';
     use HasFactory;
 
     protected $fillable = [];

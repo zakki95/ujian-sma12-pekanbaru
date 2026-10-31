@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class TokenUjian extends Model
 {
+    protected $table = 'token_ujian';
     use HasFactory;
 
     protected $fillable = ['jadwal_ujian_id', 'token', 'berlaku_hingga', 'status'];

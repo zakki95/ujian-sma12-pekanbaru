@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class LogPelanggaran extends Model
 {
+    protected $table = 'log_pelanggaran';
     use HasFactory;
 
     protected $fillable = [];

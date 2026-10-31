@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class RincianNilai extends Model
 {
+    protected $table = 'rincian_nilai';
     use HasFactory;
 
     protected $fillable = [
