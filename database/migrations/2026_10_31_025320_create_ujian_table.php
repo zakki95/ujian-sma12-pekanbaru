@@ -1,0 +1,23 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('ujian', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_ujian', 255);
+            $table->text('deskripsi')->nullable();
+            $table->string('tahun_ajaran', 20);
+            $table->enum('semester', ['ganjil', 'genap']);
+            $table->enum('status', ['draft', 'aktif', 'selesai', 'dibatalkan'])->default('draft');
+            $table->timestamps();
+            $table->index(['tahun_ajaran', 'semester', 'status']);
+        });
+    }
+    public function down(): void { Schema::dropIfExists('ujian'); }
+};

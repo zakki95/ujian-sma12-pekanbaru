@@ -447,3 +447,22 @@ Menyimpan log audit untuk semua aksi penting.
 ---
 
 ## Relasi Antar Tabel
+## Status Implementasi (Tahap 04)
+
+- **Tanggal Implementasi**: 31 Oktober 2026
+- **Status**: ✅ SELESAI - Semua 16 tabel berhasil dibuat di Supabase PostgreSQL
+- **Metode Koneksi**: Transaction Pooler (Port 6543)
+- **Project ID**: hifpvusnigugjbwshstz
+- **Region**: Singapore (ap-southeast-1)
+
+### Jaminan Integritas & Konkurensi (Database Level)
+
+1. **Satu Sesi Aktif per Peserta**:  
+   Tabel `sesi_ujian` memiliki **Partial Unique Index** pada kolom `peserta_ujian_id` dengan kondisi `WHERE status = 'aktif'`. Ini mencegah race condition saat siswa mencoba membuka banyak tab atau request konkuren.
+
+2. **Jawaban Unik per Soal per Sesi**:  
+   Tabel `jawaban_siswa` memiliki **Unique Constraint** pada kombinasi `(sesi_ujian_id, soal_ujian_id)`. Ini menjamin bahwa autosave atau submit jawaban yang tumpang tindih akan di-handle aman oleh database.
+
+3. **Keamanan Penghapusan (Cascading & Restrict)**:  
+   - `ON DELETE CASCADE`: Untuk data turunan langsung (misal: `soal_ujian` dihapus jika `sesi_ujian` dihapus).
+   - `ON DELETE RESTRICT`: Untuk data referensi kritis (misal: `bank_soal` tidak dapat dihapus jika masih digunakan dalam `soal_ujian`).
