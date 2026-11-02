@@ -8,12 +8,10 @@ class KelasFactory extends Factory
     protected $model = Kelas::class;
     public function definition(): array
     {
-        $tingkat = $this->faker->randomElement(['X', 'XI', 'XII']);
-        $jurusan = $this->faker->randomElement(['IPA', 'IPS', 'Bahasa']);
-        $no = $this->faker->numberBetween(1, 5);
+        $uniqueId = $this->faker->unique()->numberBetween(1000, 9999);
         return [
-            'nama_kelas' => "{$tingkat} {$jurusan} {$no}",
-            'tingkat' => $tingkat,
+            'nama_kelas' => "Kelas Uji {$uniqueId}",
+            'tingkat' => 'X',
             'tahun_ajaran' => '2026/2027',
         ];
     }

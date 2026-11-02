@@ -33,3 +33,14 @@ Route::get('/dashboard', function () {
 Route::get('/', function () {
     return auth()->check() ? redirect('/dashboard') : redirect()->route('login');
 });
+// --- TAHAP 06: Master Data Akademik ---
+Route::middleware(['auth', 'check.status', 'role:admin,guru'])->group(function () {
+    Route::resource('kelas', \App\Http\Controllers\KelasController::class)->except(['create', 'edit']);
+    Route::resource('mata-pelajaran', \App\Http\Controllers\MataPelajaranController::class)->only(['index', 'show']);
+});
+
+Route::middleware(['auth', 'check.status', 'role:admin'])->group(function () {
+    Route::get('/import/siswa', [\App\Http\Controllers\ImportSiswaController::class, 'showForm'])->name('import.siswa.form');
+    Route::post('/import/siswa/preview', [\App\Http\Controllers\ImportSiswaController::class, 'preview'])->name('import.siswa.preview');
+    Route::post('/import/siswa/process', [\App\Http\Controllers\ImportSiswaController::class, 'process'])->name('import.siswa.process');
+});

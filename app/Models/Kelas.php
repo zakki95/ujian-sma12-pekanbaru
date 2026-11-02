@@ -9,10 +9,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Kelas extends Model
 {
-    protected $table = 'kelas';
     use HasFactory;
 
-    protected $fillable = ['nama_kelas', 'tingkat', 'tahun_ajaran', 'wali_kelas_id'];
+    protected $table = 'kelas';
+
+    protected $fillable = [
+        'nama_kelas', 'tingkat', 'tahun_ajaran', 'wali_kelas_id',
+    ];
 
     public function waliKelas(): BelongsTo
     {
@@ -21,6 +24,7 @@ class Kelas extends Model
 
     public function anggotaKelas(): HasMany
     {
-        return $this->hasMany(AnggotaKelas::class);
+        // Foreign key eksplisit ke kolom 'kelas_id' di tabel 'anggota_kelas'
+        return $this->hasMany(AnggotaKelas::class, 'kelas_id', 'id');
     }
 }
