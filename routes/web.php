@@ -30,12 +30,13 @@ Route::get('/dashboard', function () {
     return redirect()->route(auth()->user()->peran . '.dashboard');
 })->middleware(['auth', 'check.status']);
 
+Route::middleware(['auth', 'check.status', 'role:admin,guru'])->get('/kelas', \App\Livewire\KelasManager::class)->name('kelas.index');
 Route::get('/', function () {
     return auth()->check() ? redirect('/dashboard') : redirect()->route('login');
 });
 // --- TAHAP 06: Master Data Akademik ---
 Route::middleware(['auth', 'check.status', 'role:admin,guru'])->group(function () {
-    Route::resource('kelas', \App\Http\Controllers\KelasController::class)->except(['create', 'edit']);
+    
     Route::resource('mata-pelajaran', \App\Http\Controllers\MataPelajaranController::class)->only(['index', 'show']);
 });
 
