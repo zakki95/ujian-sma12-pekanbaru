@@ -1,13 +1,18 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\Kelas;
 use App\Http\Requests\StoreKelasRequest;
 use App\Http\Requests\UpdateKelasRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests; // <--- DITAMBAHKAN
 
 class KelasController extends Controller
 {
+    use AuthorizesRequests; // <--- DITAMBAHKAN
+
     public function index(Request $request)
     {
         $this->authorize('viewAny', Kelas::class);
@@ -34,12 +39,9 @@ class KelasController extends Controller
 
     public function destroy($id)
     {
-        // Explicit finding: Menghindari masalah Route Model Binding di environment testing
         $kelas = Kelas::findOrFail($id);
-        
         $this->authorize('delete', $kelas);
 
-        // Cek relasi menggunakan Query Builder untuk akurasi mutlak
         $adaSiswaAktif = DB::table('anggota_kelas')
             ->where('kelas_id', $kelas->id)
             ->where('status', 'aktif')

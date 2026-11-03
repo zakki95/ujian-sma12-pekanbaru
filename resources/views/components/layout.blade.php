@@ -102,5 +102,7 @@
         @endif
         {{ $slot }}
     </main>
+
+    @livewireScripts
 </body>
 </html>
