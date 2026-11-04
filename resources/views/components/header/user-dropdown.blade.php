@@ -1,26 +1,20 @@
-﻿@php
+@php
     use Illuminate\Support\Facades\Storage;
 
     $user = auth()->user();
     $userName = $user->nama_lengkap ?? 'Pengguna';
     $userEmail = $user->email ?? '';
 
-    // Fallback inisial nama (mengambil 2 huruf pertama dari kata)
     $initials = strtoupper(collect(explode(' ', $userName))
         ->map(fn ($n) => mb_substr($n, 0, 1))
         ->take(2)
         ->implode(''));
 
-    // Logika foto profil
     $fotoUrl = null;
     if (!empty($user->foto)) {
-        // Jika sudah berupa URL absolut, gunakan langsung
         if (str_starts_with($user->foto, 'http://') || str_starts_with($user->foto, 'https://')) {
             $fotoUrl = $user->foto;
         } else {
-            // Jika path relatif, gunakan mekanisme storage publik.
-            // CATATAN: Karena public/storage belum dibuat (storage:link belum dijalankan),
-            // URL ini mungkin belum bisa diakses secara visual sampai symlink dibuat.
             $fotoUrl = Storage::url($user->foto);
         }
     }

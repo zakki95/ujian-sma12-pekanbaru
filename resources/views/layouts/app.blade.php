@@ -16,6 +16,8 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    @livewireStyles
+
     <!-- Theme Store -->
     <style>
         [x-cloak] {
@@ -140,7 +142,7 @@
 
 
 
-    <div class="min-h-screen xl:flex sidebar-expanded" x-data :class="{ 'sidebar-expanded': $store.sidebar.isExpanded || $store.sidebar.isHovered || $store.sidebar.isMobileOpen }">
+    <div class="min-h-screen xl:flex sidebar-expanded bg-gray-50 dark:bg-gray-900" x-data :class="{ 'sidebar-expanded': $store.sidebar.isExpanded || $store.sidebar.isHovered || $store.sidebar.isMobileOpen }">
         @include('layouts.backdrop')
         @include('layouts.sidebar')
 
@@ -159,5 +161,7 @@
 </body>
 
 @stack('scripts')
+
+    @livewireScripts
 
 </html>

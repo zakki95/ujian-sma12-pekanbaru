@@ -7,7 +7,7 @@
             {{ __('sidebar.widget.description') }}
         </p>
         <a href="https://tailadmin.com/pricing" target="_blank" rel="nofollow"
-            class="flex items-center justify-center rounded-lg bg-brand-500 p-3 text-sm font-medium text-white hover:bg-brand-600">
+            class="flex items-center justify-center rounded-lg bg-blue-600 p-3 text-sm font-medium text-white hover:bg-blue-700">
             {{ __('sidebar.widget.purchasePlan') }}
         </a>
     </div>

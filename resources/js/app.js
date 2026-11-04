@@ -1,4 +1,4 @@
-﻿import './bootstrap';
+import './bootstrap';
 import uiDropdown from './ui/dropdown.js';
 
 const registerUiDropdown = (Alpine) => {

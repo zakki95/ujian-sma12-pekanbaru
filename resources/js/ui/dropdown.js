@@ -1,4 +1,4 @@
-﻿const instances = new Set();
+const instances = new Set();
 let uid = 0;
 let hooksBound = false;
 
@@ -363,6 +363,7 @@ export default function uiDropdown({ defaultOpen = false, sub = false } = {}) {
             left = Math.min(Math.max(left, VIEWPORT_PADDING), Math.max(vw - w - VIEWPORT_PADDING, VIEWPORT_PADDING));
             top = Math.min(Math.max(top, VIEWPORT_PADDING), Math.max(vh - h - VIEWPORT_PADDING, VIEWPORT_PADDING));
 
+            // PENTING: Terapkan transform pada WRAPPER, bukan content
             wrapper.style.transform = `translate3d(${Math.round(left)}px, ${Math.round(top)}px, 0)`;
 
             content.setAttribute('data-side', side);
