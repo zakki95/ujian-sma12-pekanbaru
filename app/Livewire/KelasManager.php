@@ -10,7 +10,7 @@ use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-#[Layout('components.layout')]
+#[Layout('layouts.livewire')]
 class KelasManager extends Component
 {
     use WithPagination;
