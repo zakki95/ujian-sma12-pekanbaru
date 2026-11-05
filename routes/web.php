@@ -44,4 +44,5 @@ Route::middleware(['auth', 'check.status', 'role:admin'])->group(function () {
     Route::get('/import/siswa', [\App\Http\Controllers\ImportSiswaController::class, 'showForm'])->name('import.siswa.form');
     Route::post('/import/siswa/preview', [\App\Http\Controllers\ImportSiswaController::class, 'preview'])->name('import.siswa.preview');
     Route::post('/import/siswa/process', [\App\Http\Controllers\ImportSiswaController::class, 'process'])->name('import.siswa.process');
+    Route::get('/import/siswa/template', [\App\Http\Controllers\ImportSiswaController::class, 'downloadTemplate'])->name('import.siswa.template');
 });
