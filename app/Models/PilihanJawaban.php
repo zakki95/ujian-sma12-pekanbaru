@@ -10,7 +10,7 @@ class PilihanJawaban extends Model
     protected $table = 'pilihan_jawaban';
     use HasFactory;
 
-    protected $fillable = [];
+    protected $fillable = ['label', 'teks_jawaban', 'gambar_jawaban', 'is_benar', 'urutan'];
 
     public function bankSoal(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {

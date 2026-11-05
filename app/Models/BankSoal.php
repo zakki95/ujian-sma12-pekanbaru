@@ -14,7 +14,7 @@ class BankSoal extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'guru_id', 'mata_pelajaran_id', 'jenis_soal', 'teks_soal',
+        'mata_pelajaran_id', 'jenis_soal', 'teks_soal',
         'gambar_soal', 'kunci_jawaban', 'rubrik_esai', 'bobot_nilai',
         'tingkat_kesukaran', 'status'
     ];

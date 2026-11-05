@@ -10,11 +10,11 @@ class BerkasSoal extends Model
     protected $table = 'berkas_soal';
     use HasFactory;
 
-    protected $fillable = [];
+    protected $fillable = ['nama_berkas', 'path_berkas', 'ukuran_berkas', 'mime_type', 'status_impor', 'ringkasan_impor'];
 
     public function guru(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Guru::class);
+        return $this->belongsTo(Pengguna::class, 'guru_id');
     }
 
 

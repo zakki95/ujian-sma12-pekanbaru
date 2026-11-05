@@ -10,7 +10,7 @@ class AnggotaPaketSoal extends Model
     protected $table = 'anggota_paket_soal';
     use HasFactory;
 
-    protected $fillable = [];
+    protected $fillable = ['paket_soal_id', 'bank_soal_id', 'urutan'];
 
     public function paketSoal(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {

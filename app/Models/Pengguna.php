@@ -54,4 +54,9 @@ class Pengguna extends Authenticatable
     {
         return $this->belongsToMany(MataPelajaran::class, 'guru_mapel', 'pengguna_id', 'mata_pelajaran_id');
     }
+
+    public function bankSoal(): HasMany
+    {
+        return $this->hasMany(BankSoal::class, 'guru_id');
+    }
 }
