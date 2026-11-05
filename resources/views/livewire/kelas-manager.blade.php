@@ -1,4 +1,4 @@
-﻿
+
 <div>
     <!-- Notifikasi -->
     @if(session('sukses'))
@@ -30,18 +30,18 @@
     </div>
 
     <!-- Table -->
-    <div class="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900">
+    <div class="overflow-hidden rounded-xl border border-gray-300 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900">
         <div class="overflow-x-auto">
-            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-800">
+            <table class="min-w-full divide-y divide-gray-300 dark:divide-gray-800">
                 <thead class="bg-gray-50 dark:bg-gray-800/50">
                     <tr>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Nama Kelas</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Tingkat</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Tahun Ajaran</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-400">Nama Kelas</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-400">Tingkat</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-400">Tahun Ajaran</th>
                         <th scope="col" class="relative px-6 py-3"><span class="sr-only">Aksi</span></th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-gray-200 bg-white dark:divide-gray-800 dark:bg-gray-900">
+                <tbody class="divide-y divide-gray-300 bg-white dark:divide-gray-800 dark:bg-gray-900">
                     @forelse($kelas as $k)
                         <tr class="transition-colors hover:bg-gray-50 dark:hover:bg-gray-800/50">
                             <td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-900 dark:text-white">{{ $k->nama_kelas }}</td>
@@ -54,7 +54,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4" class="px-6 py-8 text-center text-sm text-gray-500 dark:text-gray-400">Tidak ada data kelas. Klik "Tambah Kelas" untuk membuat kelas baru.</td>
+                            <td colspan="4" class="px-6 py-8 text-center text-sm text-gray-700 dark:text-gray-400">Tidak ada data kelas. Klik "Tambah Kelas" untuk membuat kelas baru.</td>
                         </tr>
                     @endforelse
                 </tbody>
@@ -74,7 +74,7 @@
                 <div class="fixed inset-0 bg-black/50 transition-opacity backdrop-blur-sm dark:bg-black/70" wire:click="closeModal()" aria-hidden="true"></div>
                 <span class="hidden sm:inline-block sm:h-screen sm:align-middle" aria-hidden="true">&#8203;</span>
 
-                <div class="relative inline-block transform overflow-hidden rounded-2xl border border-gray-200 bg-white text-left shadow-xl transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full dark:border-gray-700 dark:bg-gray-900">
+                <div class="relative inline-block transform overflow-hidden rounded-2xl border border-gray-300 bg-white text-left shadow-xl transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full dark:border-gray-700 dark:bg-gray-900">
                     <form wire:submit.prevent="save">
                         <div class="bg-white px-6 py-5 sm:p-6 dark:bg-gray-900">
                             <h3 class="text-lg font-semibold leading-6 text-gray-900 dark:text-white">{{ $editId ? 'Edit Kelas' : 'Tambah Kelas Baru' }}</h3>
