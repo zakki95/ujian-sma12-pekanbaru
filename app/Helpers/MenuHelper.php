@@ -26,7 +26,8 @@ class MenuHelper
             $items[] = ['name' => 'Kelola Kelas', 'icon' => 'menu-two', 'path' => '/kelas'];
             $items[] = ['name' => 'Mata Pelajaran', 'icon' => 'globe', 'path' => '/mata-pelajaran'];
             // Menu Bank Soal (Admin & Guru)
-            $items[] = ['name' => 'Bank Soal', 'icon' => 'info-circle', 'path' => '/bank-soal'];
+            $items[] = ['name' => 'Bank Soal', 'icon' => 'info-circle', 'path' => '/bank-soal'];              // Menu Paket Soal (Admin & Guru)
+              $items[] = ['name' => 'Paket Soal', 'icon' => 'info-circle', 'path' => '/paket-soal'];
         }
 
         // 3. Menu Khusus Admin

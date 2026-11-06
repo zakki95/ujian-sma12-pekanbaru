@@ -38,4 +38,9 @@ class PaketSoal extends Model
     {
         return $this->hasMany(AnggotaPaketSoal::class);
     }
+
+    public function getTotalSoalAttribute(): int
+    {
+        return $this->anggotaPaketSoal()->count();
+    }
 }

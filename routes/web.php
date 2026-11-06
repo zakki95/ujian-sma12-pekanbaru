@@ -42,6 +42,10 @@ Route::middleware(['auth', 'check.status', 'role:admin,guru'])->group(function (
     Route::get('/bank-soal', \App\Livewire\BankSoalManager::class)->name('bank-soal.index');
     Route::get('/bank-soal/tambah', \App\Livewire\BankSoalForm::class)->name('bank-soal.create');
     Route::get('/bank-soal/{id}/edit', \App\Livewire\BankSoalForm::class)->name('bank-soal.edit');
+      // --- Paket Soal ---
+      Route::get('/paket-soal', \App\Livewire\PaketSoalManager::class)->name('paket-soal.index');
+      Route::get('/paket-soal/tambah', \App\Livewire\PaketSoalForm::class)->name('paket-soal.create');
+      Route::get('/paket-soal/{id}/edit', \App\Livewire\PaketSoalForm::class)->name('paket-soal.edit');
 });
 
 Route::middleware(['auth', 'check.status', 'role:admin'])->group(function () {

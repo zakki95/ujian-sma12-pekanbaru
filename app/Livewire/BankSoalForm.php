@@ -124,6 +124,15 @@ class BankSoalForm extends Component
     {
         $this->validate();
 
+        // PROTEKSI: Blokir perubahan konten jika soal sudah digunakan dalam ujian
+        if ($this->bankSoalId) {
+            $bankSoal = BankSoal::findOrFail($this->bankSoalId);
+            if ($bankSoal->soalUjian()->exists()) {
+                $this->addError('save', 'Soal ini tidak dapat diubah karena sudah digunakan dalam sesi ujian. Hal ini untuk menjaga integritas riwayat nilai siswa.');
+                return;
+            }
+        }
+
         // Validasi bisnis khusus jenis soal
         $benarCount = collect($this->pilihan)->where('is_benar', true)->count();
         if ($this->jenis_soal === 'pg' && $benarCount !== 1) {
