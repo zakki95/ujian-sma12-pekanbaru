@@ -25,6 +25,8 @@ class MenuHelper
         if (in_array($peran, ['admin', 'guru'], true)) {
             $items[] = ['name' => 'Kelola Kelas', 'icon' => 'menu-two', 'path' => '/kelas'];
             $items[] = ['name' => 'Mata Pelajaran', 'icon' => 'globe', 'path' => '/mata-pelajaran'];
+            // Menu Bank Soal (Admin & Guru)
+            $items[] = ['name' => 'Bank Soal', 'icon' => 'info-circle', 'path' => '/bank-soal'];
         }
 
         // 3. Menu Khusus Admin

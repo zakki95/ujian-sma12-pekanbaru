@@ -38,6 +38,10 @@ Route::get('/', function () {
 Route::middleware(['auth', 'check.status', 'role:admin,guru'])->group(function () {
     
     Route::resource('mata-pelajaran', \App\Http\Controllers\MataPelajaranController::class)->only(['index', 'show']);
+    // --- Bank Soal ---
+    Route::get('/bank-soal', \App\Livewire\BankSoalManager::class)->name('bank-soal.index');
+    Route::get('/bank-soal/tambah', \App\Livewire\BankSoalForm::class)->name('bank-soal.create');
+    Route::get('/bank-soal/{id}/edit', \App\Livewire\BankSoalForm::class)->name('bank-soal.edit');
 });
 
 Route::middleware(['auth', 'check.status', 'role:admin'])->group(function () {

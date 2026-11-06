@@ -38,4 +38,14 @@ class BankSoal extends Model
     {
         return $this->hasMany(SoalUjian::class);
     }
+
+    public function pilihanJawabans(): HasMany
+    {
+        return $this->hasMany(PilihanJawaban::class);
+    }
+
+    public function anggotaPaketSoal(): HasMany
+    {
+        return $this->hasMany(AnggotaPaketSoal::class);
+    }
 }

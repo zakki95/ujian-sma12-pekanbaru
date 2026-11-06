@@ -108,5 +108,18 @@
                 </div>
             </div>
         </a>
+        <a href="/bank-soal" class="group block rounded-2xl border border-gray-300 bg-white p-6 shadow-md transition-all duration-300 hover:shadow-2xl hover:border-gray-400 dark:border-gray-600 dark:bg-white/[0.03]">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 transition-colors group-hover:text-brand-500 dark:text-white dark:group-hover:text-brand-400">Kelola Bank Soal</h3>
+                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Tambah, edit, atau arsipkan soal ujian</p>
+                </div>
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-500 transition-colors group-hover:bg-brand-50 group-hover:text-brand-500 dark:bg-gray-800 dark:text-gray-400 dark:group-hover:bg-brand-500/15 dark:group-hover:text-brand-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                </div>
+            </div>
+        </a>
     </div>
 @endsection
